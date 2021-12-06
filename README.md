@@ -7,7 +7,7 @@ pip3 install -r requirements.txt
   
 ## Usage  
   
-7awwil.py -t interval (0: No interval)  
+cfile.py -t interval (0: No interval)  
     
 Click the keys k h b z consecutively to change your IP manually.  
   
