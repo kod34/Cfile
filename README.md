@@ -1,4 +1,4 @@
-Simple script that changes your IP adress through tor nodes every x amount of time.  
+Simple script that changes your IP address through tor nodes every x amount of time.  
   
 ## Installation  
 
