@@ -1,15 +1,49 @@
-Simple script that changes your IP address through tor nodes every x amount of time.  
-  
-## Installation  
+<h1 align="center">Cfile</h1>
 
-./install.sh  
-pip3 install -r requirements.txt  
-  
-## Usage  
-  
+<p align="center"> Simple script that changes your IP address through tor nodes every x amount of time.  
+    <br> 
+</p>
+
+## 📝 Table of Contents
+
+- [Getting Started](#getting_started)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [Authors](#authors)
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+### Prerequisites
+
+
+```
+Python
+Linux
+```
+
+### Installing
+
+
+```
+cd Cfile
+chmod +x install.sh
+./install.sh
+```
+
+## 🎈 Usage <a name="usage"></a>
+
+```
 cfile.py -t interval (0: No interval)  
     
-Click the keys k h b z consecutively to change your IP manually.  
-  
-## Disclaimer  
-The sole purpose of writing this program was research, its misuse is the responsibility of the user only.
+```
+
+### 📝 Notes  
+- Click the keys k h b z consecutively to change your IP manually.   
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- Python
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@kod34](https://github.com/kod34)
