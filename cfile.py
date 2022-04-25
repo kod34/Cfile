@@ -5,6 +5,7 @@ from pynput import keyboard
 from stem import Signal
 from stem.control import Controller
 from datetime import datetime
+import os
 
 combination = {'k','h','b','z'}
 page = ''
@@ -43,8 +44,12 @@ def msg(c):
 
 def init():
     try:
-        cmd = subprocess.run(['tor', '-f', 'torrc']).stdout
-        print(cmd)
+        if os.path.exists('/tmp/torrc'):
+            cmd = subprocess.run(['tor', '-f', '/tmp/torrc']).stdout
+            print(cmd)
+        else:
+            with open('/tmp/torrc') as t:
+                t.write("ControlPort 9051\nCookieAuthentication 0")
     except KeyboardInterrupt:
         print('Manual interrupt')
         sys.exit(0)
