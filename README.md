@@ -25,6 +25,7 @@ Linux
 
 
 ```
+git clone https://github.com/kod34/Cfile
 cd Cfile
 chmod +x install.sh
 ./install.sh
