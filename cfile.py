@@ -33,7 +33,7 @@ def banner():
                         
 \t\t            {0}by {3}kod34
                         
-'''.format(color.PURPLE, color.CWHITE, color.GREEN, color.RED, color.BLUE, color.DARKCYAN, color.CYAN)
+'''.format(color.PURPLE, color.END, color.GREEN, color.RED, color.BLUE, color.DARKCYAN, color.CYAN)
     print(banner)
 
 
@@ -48,8 +48,9 @@ def init():
             cmd = subprocess.run(['tor', '-f', '/tmp/torrc']).stdout
             print(cmd)
         else:
-            with open('/tmp/torrc') as t:
+            with open('/tmp/torrc', 'w') as t:
                 t.write("ControlPort 9051\nCookieAuthentication 0")
+            init()
     except KeyboardInterrupt:
         print('Manual interrupt')
         sys.exit(0)
@@ -62,7 +63,7 @@ def change_ip():
         controller.signal(Signal.NEWNYM)
     cmd = subprocess.run(['torify', 'curl', 'ifconfig.me'], capture_output=True).stdout.decode()
     stamp = datetime.now().strftime("%H:%M:%S")
-    print(color.RED+str(stamp)+" |"+color.CWHITE+" New ip: "+color.BLUE+str(cmd)+color.CWHITE)
+    print(color.YELLOW+str(stamp)+color.END+" New ip: "+color.GREEN+str(cmd)+color.END)
     time.sleep(interval)
     change_ip()
 
@@ -76,7 +77,7 @@ def m_change(key):
                     controller.authenticate()
                     controller.signal(Signal.NEWNYM)
                 cmd = subprocess.run(['torify', 'curl', 'ifconfig.me'], capture_output=True).stdout.decode()
-                print("New ip: "+color.GREEN+str(cmd)+color.CWHITE)
+                print("New ip: "+color.GREEN+str(cmd)+color.END)
                 page=''
         else:
             page=''
